@@ -1,1 +1,50 @@
-yo
+# 🖥️ Lab 01: Windows Server 2016 Deployment
+
+> Part of the **Active Directory Home Lab**
+
+## 🎯 Objective
+Build a Windows Server 2016 virtual machine that will become the domain controller for this lab.
+
+## 🧰 Environment
+
+| Item | Value |
+|---|---|
+| Hypervisor | Oracle VirtualBox |
+| Operating System | Windows Server 2016 Standard Evaluation (Desktop Experience) |
+| RAM | 4 GB |
+| CPU | 2 cores |
+| Virtual Disk | 50 GB (VDI) |
+| Network | Adapter 1: NAT, Adapter 2: Internal Network (lab only) |
+
+## 🛠️ What I Did
+
+1. Created a VM with 4 GB RAM, 2 CPU cores, and a 50 GB disk.
+2. Removed the VirtualBox unattended installation ISO from the VM.
+3. Attached the official Windows Server 2016 evaluation ISO.
+4. Ran a custom install and selected **Standard Evaluation (Desktop Experience)**.
+5. Set the built-in Administrator password. The password is not stored in this repository.
+6. Installed VirtualBox Guest Additions for full-screen display and shared folders.
+
+## ⌨️ Commands Used
+
+No commands were needed. This lab was completed through the installer and VirtualBox menus.
+
+## ⚠️ Problems I Faced
+
+| Problem | Cause | Fix |
+|---|---|---|
+| `Windows cannot find the Microsoft Software License Terms` | Unattended installation ISO was attached | Removed the unattended ISO and attached the real Windows Server ISO |
+| Password rejected (`1234`) | Password complexity rules are on by default | Used a password with uppercase, lowercase, numbers, and symbols |
+| Ctrl+Alt+Del opened my host PC's menu | The keystroke went to the host, not the VM | Used **Input → Keyboard → Insert Ctrl+Alt+Del** |
+
+## 📸 Screenshots
+
+| File | What It Shows |
+|---|---|
+| `assets/01-VM-Configuration.png` | VM hardware settings (RAM, CPU, disk) |
+
+## 💡 Key Takeaways
+
+- Choose **Desktop Experience** if you want GUI tools like Server Manager.
+- Remove unattended installation media before a manual install.
+- The Administrator password will later control the whole domain, so keep it safe.
